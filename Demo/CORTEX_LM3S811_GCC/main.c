@@ -171,10 +171,10 @@ int main( void )
 
 static void vCheckTask( void *pvParameters )
 {
-portBASE_TYPE xErrorOccurred = pdFALSE;
-TickType_t xLastExecutionTime;
-const char *pcPassMessage = "PASS";
-const char *pcFailMessage = "FAIL";
+	portBASE_TYPE xErrorOccurred = pdFALSE;
+	TickType_t xLastExecutionTime;
+	const char *pcPassMessage = "PASS";
+	const char *pcFailMessage = "FAIL";
 
 	/* Initialise xLastExecutionTime so the first call to vTaskDelayUntil()
 	works correctly. */
@@ -267,7 +267,7 @@ static void prvSetupHardware( void )
 
 static void vButtonHandlerTask( void *pvParameters )
 {
-const char *pcInterruptMessage = "Int";
+	const char *pcInterruptMessage = "Int";
 
 	for( ;; )
 	{
@@ -302,7 +302,7 @@ const char *pcInterruptMessage = "Int";
 
 void vUART_ISR(void)
 {
-unsigned long ulStatus;
+	unsigned long ulStatus;
 
 	/* What caused the interrupt. */
 	ulStatus = UARTIntStatus( UART0_BASE, pdTRUE );
@@ -328,7 +328,7 @@ unsigned long ulStatus;
 
 void vGPIO_ISR( void )
 {
-portBASE_TYPE xHigherPriorityTaskWoken = pdFALSE;
+	portBASE_TYPE xHigherPriorityTaskWoken = pdFALSE;
 
 	/* Clear the interrupt. */
 	GPIOPinIntClear(GPIO_PORTC_BASE, mainPUSH_BUTTON);
@@ -342,8 +342,8 @@ portBASE_TYPE xHigherPriorityTaskWoken = pdFALSE;
 
 static void vPrintTask( void *pvParameters )
 {
-char *pcMessage;
-unsigned portBASE_TYPE uxLine = 0, uxRow = 0;
+	char *pcMessage;
+	unsigned portBASE_TYPE uxLine = 0, uxRow = 0;
 
 	for( ;; )
 	{
